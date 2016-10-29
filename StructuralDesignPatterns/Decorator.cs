@@ -2,22 +2,13 @@
 
 namespace DoFactory.GangOfFour.Decorator.Structural
 {
-    /// <summary>
-    /// MainApp startup class for Structural 
-    /// Decorator Design Pattern.
-    /// </summary>
     class MainApp
     {
-        /// <summary>
-        /// Entry point into console application.
-        /// </summary>
         static void Main2()
         {
             // Create ConcreteComponent and two Decorators
             ConcreteComponent c = new ConcreteComponent();
             ConcreteDecoratorA d1 = new ConcreteDecoratorA();
-            ConcreteDecoratorB d2 = new ConcreteDecoratorB();
-
             // Link decorators
             d1.SetComponent(c);
             d2.SetComponent(d1);
@@ -37,9 +28,6 @@ namespace DoFactory.GangOfFour.Decorator.Structural
         public abstract void Operation();
     }
 
-    /// <summary>
-    /// The 'ConcreteComponent' class
-    /// </summary>
     class ConcreteComponent : Component
     {
         public override void Operation()
@@ -48,9 +36,6 @@ namespace DoFactory.GangOfFour.Decorator.Structural
         }
     }
 
-    /// <summary>
-    /// The 'Decorator' abstract class
-    /// </summary>
     abstract class Decorator : Component
     {
         protected Component component;
